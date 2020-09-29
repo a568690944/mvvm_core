@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library' // 认准这行
+apply plugin: 'com.github.dcendents.android-maven' // 添加本行
+group='com.github.lh1250360307'    // 添加本行
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.constraintlayout:constraintlayout:2.0.1'//约束布局
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'com.github.bumptech.glide:glide:4.11.0'//图片处理
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'//RecyclerView万能适配器,自带上拉加载
+    api 'com.github.razerdp:BasePopup:2.2.7'//封装好的Popup
+    api 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    api 'net.danlew:android.joda:2.9.5.1'//时间工具类
+    api 'com.jeremyliao:live-event-bus-x:1.7.2'//livedatabus
+    api 'com.github.razerdp:BasePopup:2.2.7'
+    api 'com.noober.background:core:1.6.5'//可以代替大量drawable的drawable库
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api 'androidx.lifecycle:lifecycle-reactivestreams:2.2.0'
+    api 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+
+    implementation project(':rxeasyhttp')
+}

@@ -1,0 +1,3 @@
+include ':rxeasyhttp'
+include ':app'
+rootProject.name = "mvvm_core"
