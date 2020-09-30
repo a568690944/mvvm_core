@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
-
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Locale;
@@ -22,7 +24,7 @@ import java.util.regex.Pattern;
  * @文件名称: Utils.java
  * @类型名称: Utils
  */
-public class Utils {
+public class MyUtils {
 
 	/**
 	 * UUID
@@ -150,6 +152,51 @@ public class Utils {
 		return t;
 	}
 
+
+
+	/**
+	 * 将edittext转换为string
+	 * @param editText
+	 * @return String
+	 */
+	public static String getEditTextStr(EditText editText) {
+		String str = editText.getText().toString();
+		if (TextUtils.isEmpty(str)) {
+			return "";
+		} else {
+			return str.trim().replace(" ", "");
+		}
+	}
+
+
+
+	/**
+	 * 将TextView转换为string
+	 *
+	 * @param textView
+	 * @return
+	 */
+	public static String getTextViewStr(TextView textView) {
+		String str = textView.getText().toString().trim().replaceAll(" ", "");
+		return str;
+	}
+
+
+
+	/**
+	 * 隐藏键盘
+	 * ：强制隐藏
+	 *
+	 * @param context
+	 */
+	public static void hideInputSoftFromWindowMethod(Context context, View view) {
+		try {
+			InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 
 }
