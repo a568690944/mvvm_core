@@ -8,9 +8,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 
-/**
- * Created by jingbin on 2018/12/26.
- */
+
 
 public class ClassUtil {
 

@@ -11,20 +11,25 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
 import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.jakewharton.rxbinding2.view.RxView;
 import com.jiantaokeji.answerliu.mvvm_core.R;
 import com.jiantaokeji.answerliu.mvvm_core.databinding.ActivityBaseBinding;
 import com.jiantaokeji.answerliu.mvvm_core.utils.ClassUtil;
+
 import java.util.concurrent.TimeUnit;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+
 import static com.jiantaokeji.answerliu.mvvm_core.constant.ComParamContact.WINDOW_DURATION;
 
 
@@ -176,9 +181,11 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         }
     }
 
-    protected void initView(){}
+    protected void initView() {
+    }
 
-    protected void onClickToolBarRight(){}
+    protected void onClickToolBarRight() {
+    }
 
 
     public void addSubscription(Disposable s) {

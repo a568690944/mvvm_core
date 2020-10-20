@@ -226,4 +226,19 @@ public class DateUtils {
         return "";
 
     }
+
+
+    public static String getNowTime(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return format.format(new Date());
+    }
+
+    public static String timeStamp2Date(long seconds,String format) {
+        if(seconds==0){
+            return "";
+        }
+        if(format == null || format.isEmpty()) format = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(new Date(seconds));
+    }
 }

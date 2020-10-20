@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * @author: AnswerLiu
  * @date: 2020/8/13
- * @description
+ * @description BigDecimal计算工具类
  */
 public class DoubleFormatTool {
     /**
