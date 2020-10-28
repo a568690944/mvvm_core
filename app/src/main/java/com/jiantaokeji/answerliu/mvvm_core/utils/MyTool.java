@@ -175,6 +175,18 @@ public class MyTool {
 	}
 
 
+	/**
+	 * 判断字符串是不是数字型
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNumeric(String str) {
+		if (ObjectHelper.isEmpty(str)) {
+			return false;
+		}
+		return str.matches("^-?[0-9]+\\.?[0-9]*$");
+	}
+
 
 	/**
 	 * 隐藏键盘
