@@ -1,5 +1,7 @@
 package com.jiantaokeji.answerliu.mvvm_core.vm;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -24,11 +26,20 @@ public class BaseViewModel extends AndroidViewModel {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
+    private Activity activity;
+
+
     protected <T> void execute(Observable<T> observable, Observer<T> observer) {
         observable.throttleFirst(500, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
+    }
+
+
+    public <A extends Activity> A getActivity() {
+        return (A) activity;
     }
 
     protected void addDisposable(Disposable disposable) {

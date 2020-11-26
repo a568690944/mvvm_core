@@ -11,21 +11,17 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
 import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.jakewharton.rxbinding2.view.RxView;
 import com.jiantaokeji.answerliu.mvvm_core.R;
 import com.jiantaokeji.answerliu.mvvm_core.databinding.ActivityBaseBinding;
 import com.jiantaokeji.answerliu.mvvm_core.utils.ClassUtil;
-
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -108,13 +104,29 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
                 .subscribe(o -> finish()));
     }
 
+    public void setToolBarColor(int color){
+        mBaseBinding.toolBar.setBackgroundResource(color);
+    }
+
     public void setTitle(CharSequence text) {
         mBaseBinding.toolbarTitle.setText(text);
     }
 
+    public void setTitleColor(int color){
+        mBaseBinding.toolbarTitle.setTextColor(color);
+    }
+
+
+
     public void setNoTitle() {
         mBaseBinding.toolBar.setVisibility(View.GONE);
     }
+
+
+    public void setBackIcon(int icon){
+        mBaseBinding.ivBack.setImageResource(icon);
+    }
+
 
     public void setToolBarRight(int icon) {
         mBaseBinding.ivRight.setImageResource(icon);
@@ -181,11 +193,9 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         }
     }
 
-    protected void initView() {
-    }
+    protected void initView() {}
 
-    protected void onClickToolBarRight() {
-    }
+    protected void onClickToolBarRight() {}
 
 
     public void addSubscription(Disposable s) {

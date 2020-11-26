@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+    <declare-styleable name="NormalTabView">
+        <attr name="ntv_text_selected_color" format="color" />
+        <attr name="ntv_text_normal_color" format="color" />
+        <attr name="ntv_text_size" format="dimension" />
+        <attr name="ntv_icon_normal" format="reference" />
+        <attr name="ntv_icon_selected" format="reference" />
+        <attr name="ntv_tab_selected" format="boolean" />
+        <attr name="ntv_tab_name" format="string" />
+    </declare-styleable>
 
 </resources>

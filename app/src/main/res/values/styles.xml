@@ -1,15 +1,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@color/activity_bg</item>
-        <item name="colorPrimary">@color/main_color</item>
-        <item name="colorPrimaryDark">@color/main_color</item>
-        <item name="colorAccent">@color/main_color</item>
-        <item name="android:windowEnableSplitTouch">false</item>  <!--禁用全局多点触控 -->
-        <item name="android:splitMotionEvents">false</item>  <!--防止对控件的重复点击和同时点击多个控件-->
-        <item name="android:windowAnimationStyle">@style/default_animation</item>
-    </style>
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="android:windowBackground">@color/activity_bg</item>-->
+<!--        <item name="colorPrimary">@color/main_color</item>-->
+<!--        <item name="colorPrimaryDark">@color/main_color</item>-->
+<!--        <item name="colorAccent">@color/main_color</item>-->
+<!--        <item name="android:windowEnableSplitTouch">false</item>  &lt;!&ndash;禁用全局多点触控 &ndash;&gt;-->
+<!--        <item name="android:splitMotionEvents">false</item>  &lt;!&ndash;防止对控件的重复点击和同时点击多个控件&ndash;&gt;-->
+<!--        <item name="android:windowAnimationStyle">@style/default_animation</item>-->
+<!--    </style>-->
 
 
     <!-- 默认Activity跳转动画 -->
